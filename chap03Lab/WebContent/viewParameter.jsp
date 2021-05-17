@@ -43,6 +43,7 @@
 		<b>request.getParameterMap() 메서드 사용</b><br>
 		<%
 	Map parameterMap = request.getParameterMap();
+	// {name:"홍길동", adress:서울, pet:"dog"}
 	String[] nameParam = (String[])parameterMap.get("name");
 	if (nameParam != null) {
 %>
