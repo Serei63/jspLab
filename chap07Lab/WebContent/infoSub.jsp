@@ -1,5 +1,7 @@
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%
+	request.setCharacterEncoding("utf-8");
+
 	String type = request.getParameter("type");
 	if (type == null) {
 		return;
