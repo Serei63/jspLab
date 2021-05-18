@@ -4,7 +4,8 @@
 	String value = request.getParameter("value");
 	
 	if (name != null && value != null) {
-		application.setAttribute(name, value);
+		application.setAttribute("name", name);
+		application.setAttribute("value", value);
 	}
 %>
 
@@ -15,7 +16,7 @@
 	if (name != null && value != null) {
 %>
 application 기본 객체의 속성 설정:
- <%= name %> = <%= value %>
+ <%= application.getAttribute("name") %> = <%= application.getAttribute("value") %>
 <%
 	} else {
 %>
