@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<title>AdminLTE 2 | Dashboard</title>
+
 <%@ include file="../include/header.jspf" %>
 
   <!-- 구글 세계 언어 선택 -->
@@ -604,7 +606,9 @@ google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_elemen
 				mySwipe.next(); //다음 배너로 이동합니다.
 				return false;
 			});
+			
 	});
 </script>
+
 
  <%@ include file="../include/footer.jspf" %>

@@ -1,11 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="util.Cookies"%>
+    <% Cookies cookies = new Cookies(request); %>
+    	<%
+		if (!cookies.exists("AUTH")) {
+			response.sendRedirect("../login/login.jsp");
+		}
+	%>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Blank Page</title>
+  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -29,6 +36,9 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -36,7 +46,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="../main/index.jsp" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -141,7 +151,11 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<%= request.getContextPath() %>/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><%= request.getParameter("email") %></span>
+              <span class="hidden-xs">
+				<% if (cookies.exists("AUTH")) { %>
+						<%= cookies.getValue("AUTH") %>
+				<%	}	%>
+			  </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -173,8 +187,8 @@
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <div class="pull-right" id="Sign_out">
+                  <a href="../login/logoutprocess.jsp" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -340,7 +354,7 @@
             <li><a href="../examples/board.jsp"><i class="fa fa-circle-o"></i> 게시판</a></li>
             <li><a href="../examples/dongaBoard.jsp"><i class="fa fa-circle-o"></i> 동아일보 게시판</a></li>
             <li><a href="../examples/gallery.jsp"><i class="fa fa-circle-o"></i> 갤러리</a></li>
-            <li><a href="../examples/chosen.jsp"><i class="fa fa-circle-o"></i> 조선닷컴</a></li>
+            <li><a href="../examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선닷컴</a></li>
             <li><a href="../examples/invoice.jsp"><i class="fa fa-circle-o"></i> Invoice</a></li>
             <li><a href="../examples/profile.jsp"><i class="fa fa-circle-o"></i> Profile</a></li>
             <li><a href="../login/login.jsp"><i class="fa fa-circle-o"></i> Login</a></li>
