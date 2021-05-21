@@ -1,17 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<fmt:setLocale value="${param.lang}" />
+<fmt:bundle basename="resource.message">
 
 <title>AdminLTE 2 | Dashboard</title>
 
 <%@ include file="../include/header.jspf" %>
 
   <!-- 구글 세계 언어 선택 -->
-  <script type="text/javascript">
+<!--   <script type="text/javascript">
 function googleTranslateElementInit() {
 new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ja,ko,zh-CN', layout:
 google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
-</script>
+</script> -->
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/resources/css/base.css" media="all" />
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/resources/css/main.css" media="all" />
@@ -22,7 +26,7 @@ google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_elemen
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        <fmt:message key="DASHBOARD" />
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
@@ -612,3 +616,4 @@ google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_elemen
 
 
  <%@ include file="../include/footer.jspf" %>
+</fmt:bundle>

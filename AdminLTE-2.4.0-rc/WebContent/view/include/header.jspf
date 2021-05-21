@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="util.Cookies"%>
+<%@ page import="util.Cookies"%>
+
     <% Cookies cookies = new Cookies(request); %>
     <%
 	String memberEmail = (String)session.getAttribute("AUTH");
@@ -11,6 +12,7 @@
 		response.sendRedirect("../login/login.jsp");
 	}
 	%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,15 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+<script type="text/javascript">
+function chageLangSelect(){ 
+	var langSelect = document.getElementById("lang"); 
+	var selectValue = langSelect.options[langSelect.selectedIndex].value; 
 
+	window.self.location = "<%= request.getRequestURL() %>?lang=" + selectValue ;
+
+}
+</script>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -68,6 +78,17 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <li>
+          	<label for="lang"><fmt:message key="LANGUAGE" /></label> 
+				<select id="lang" name="lang" size="1" onchange="chageLangSelect()">
+					<option value="none">-----</option>
+					<option value="en">English</option>
+					<option value="ko">한국어</option>
+					<option value="ja">日本語</option>
+					<option value="zh">中国語</option>
+				</select>
+          
+          </li>
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
