@@ -9,15 +9,25 @@
 </head>
 <body>
 	<form method="post">
-	<%! String email;
-	String pwd;%>
+	<%!  String email;
+		String pwd;
+		String remember="off"; %>
 		<%
 		request.setCharacterEncoding("utf-8");
 		email = request.getParameter("email");
+		
+		if(request.getParameter("remember")!=null){
+			remember = request.getParameter("remember");
+		}
+		
 		pwd = request.getParameter("password");
 		if (email.equals("hanguk@naver.com")&&pwd.equals("1234")) {
+			if(remember.equals("on")){
 				response.addCookie(Cookies.createCookie("AUTH", email, "/", -1));
-				response.sendRedirect("../main/index.jsp?email=" + email);
+			} else if (remember.equals("off")){
+				session.setAttribute("AUTH", email);
+			}
+		response.sendRedirect("../main/index.jsp");
 		} else {
 		%>
 		<script>

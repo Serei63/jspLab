@@ -2,10 +2,14 @@
     pageEncoding="UTF-8"%>
     <%@ page import="util.Cookies"%>
     <% Cookies cookies = new Cookies(request); %>
-    	<%
-		if (!cookies.exists("AUTH")) {
-			response.sendRedirect("../login/login.jsp");
-		}
+    <%
+	String memberEmail = (String)session.getAttribute("AUTH");
+	boolean login = memberEmail == null ? false : true;
+	%>
+    <%
+	if (!cookies.exists("AUTH") && login == false) {
+		response.sendRedirect("../login/login.jsp");
+	}
 	%>
 <!DOCTYPE html>
 <html>
@@ -154,7 +158,10 @@
               <span class="hidden-xs">
 				<% if (cookies.exists("AUTH")) { %>
 						<%= cookies.getValue("AUTH") %>
-				<%	}	%>
+				<%	} else if(login){
+					%>
+					<%= memberEmail %>
+				<% } %>
 			  </span>
             </a>
             <ul class="dropdown-menu">

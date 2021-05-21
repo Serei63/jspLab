@@ -2,6 +2,7 @@
 <%@ page import="util.Cookies"%>
 <%
 	response.addCookie(Cookies.createCookie("AUTH", "", "/", 0));
+	session.invalidate();
 %>
 <html>
 <head>
