@@ -379,19 +379,20 @@ function chageLangSelect(){
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../examples/board.jsp"><i class="fa fa-circle-o"></i> 게시판</a></li>
-            <li><a href="../examples/dongaBoard.jsp"><i class="fa fa-circle-o"></i> 동아일보 게시판</a></li>
-            <li><a href="../examples/gallery.jsp"><i class="fa fa-circle-o"></i> 갤러리</a></li>
-            <li><a href="../examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선닷컴</a></li>
-            <li><a href="../examples/invoice.jsp"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="../examples/profile.jsp"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="../login/login.jsp"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="../examples/register.jsp"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="../examples/lockscreen.jsp"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="../examples/404.jsp"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="../examples/500.jsp"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="../examples/blank.jsp"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="../examples/pace.jsp"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/board.jsp"><i class="fa fa-circle-o"></i> 게시판</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/dongaBoard.jsp"><i class="fa fa-circle-o"></i> 동아일보 게시판</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/gallery.jsp"><i class="fa fa-circle-o"></i> 갤러리</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선닷컴</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/guestbook/guestbook.jsp"><i class="fa fa-circle-o"></i> 방명록</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/invoice.jsp"><i class="fa fa-circle-o"></i> Invoice</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/profile.jsp"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="<%= request.getContextPath() %>/login/login.jsp"><i class="fa fa-circle-o"></i> Login</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/register.jsp"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/lockscreen.jsp"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/404.jsp"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/500.jsp"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/blank.jsp"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/examples/pace.jsp"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
         <li class="treeview">
