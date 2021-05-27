@@ -9,6 +9,9 @@ public class HelloHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) {
+		
+		// service.select();
+		
 		req.setAttribute("hello", "안녕하세요!");
 		return "/WEB-INF/view/hello.jsp";
 	}

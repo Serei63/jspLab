@@ -26,4 +26,12 @@ public class NowServlet extends HttpServlet {
 		out.println("</body></html>");
 	}
 
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+	}
+	
+	
+
 }

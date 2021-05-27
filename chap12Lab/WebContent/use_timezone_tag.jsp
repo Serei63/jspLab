@@ -9,6 +9,12 @@
 
 <fmt:formatDate value="${now}" type="both" 
                 dateStyle="full" timeStyle="full" />
+<br>
+                
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date" />
+${date}
+                
+                
 
 <br>
 <fmt:timeZone value="Hongkong">

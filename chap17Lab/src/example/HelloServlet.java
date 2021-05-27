@@ -28,4 +28,10 @@ public class HelloServlet extends HttpServlet {
 		out.println("</body></html>");
 	}
 
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
+
 }

@@ -19,13 +19,17 @@ import mvc.command.NullHandler;
 public class ControllerUsingURI extends HttpServlet {
 
     // <커맨드, 핸들러인스턴스> 매핑 정보 저장
+	// {"hello":"HelloHandler객체", someCommand":"SomeHandler객체"}
     private Map<String, CommandHandler> commandHandlerMap = 
     		new HashMap<>();
 
     public void init() throws ServletException {
         String configFile = getInitParameter("configFile");
+        // Properties = map 자료구조로 키=String, Value=String, {key:value}
+        // {"hello":"mvc.hello.helloHandler"}
         Properties prop = new Properties();
         String configFilePath = getServletContext().getRealPath(configFile);
+        // ㄴ> 파일 경로를 가져와서 String으로 집어넣음
         try (FileReader fis = new FileReader(configFilePath)) {
             prop.load(fis);
         } catch (IOException e) {
@@ -33,8 +37,8 @@ public class ControllerUsingURI extends HttpServlet {
         }
         Iterator keyIter = prop.keySet().iterator();
         while (keyIter.hasNext()) {
-            String command = (String) keyIter.next();
-            String handlerClassName = prop.getProperty(command);
+            String command = (String) keyIter.next();	// "hello"
+            String handlerClassName = prop.getProperty(command);	// "mvc.hello.HelloHandler"
             try {
                 Class<?> handlerClass = Class.forName(handlerClassName);
                 CommandHandler handlerInstance = 
