@@ -216,7 +216,7 @@ function chageLangSelect(){
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right" id="Sign_out">
-                  <a href="../login/logoutprocess.jsp" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout.do" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -383,7 +383,7 @@ function chageLangSelect(){
             <li><a href="<%= request.getContextPath() %>/view/examples/dongaBoard.jsp"><i class="fa fa-circle-o"></i> 동아일보 게시판</a></li>
             <li><a href="<%= request.getContextPath() %>/view/examples/gallery.jsp"><i class="fa fa-circle-o"></i> 갤러리</a></li>
             <li><a href="<%= request.getContextPath() %>/view/examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선닷컴</a></li>
-            <li><a href="<%= request.getContextPath() %>/view/examples/guestbook/guestbook.jsp"><i class="fa fa-circle-o"></i> 방명록</a></li>
+            <li><a href="<%= request.getContextPath() %>/view/guestbook/guestbook.jsp"><i class="fa fa-circle-o"></i> 방명록</a></li>
             <li><a href="<%= request.getContextPath() %>/view/examples/invoice.jsp"><i class="fa fa-circle-o"></i> Invoice</a></li>
             <li><a href="<%= request.getContextPath() %>/view/examples/profile.jsp"><i class="fa fa-circle-o"></i> Profile</a></li>
             <li><a href="<%= request.getContextPath() %>/login/login.jsp"><i class="fa fa-circle-o"></i> Login</a></li>

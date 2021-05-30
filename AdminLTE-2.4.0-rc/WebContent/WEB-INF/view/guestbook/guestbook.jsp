@@ -19,7 +19,7 @@
 <c:set var="viewData" value="<%= viewData %>"/>
 
 <title>AdminLTE 2 | 방명록</title>
-<%@ include file="../../include/header.jspf" %>
+<%@ include file="../include/header.jspf" %>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -100,4 +100,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <%@ include file="../../include/footer.jspf" %>
+  <%@ include file="../include/footer.jspf" %>

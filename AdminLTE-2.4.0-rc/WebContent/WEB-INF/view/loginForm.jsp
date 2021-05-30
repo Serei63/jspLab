@@ -37,13 +37,15 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="<%= request.getContextPath() %>/view/login/loginprocess.jsp" method="post">
+    <form action="login.do" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" id="id" value="${param.id}" placeholder="Email">
+        <br> <c:if test="${errors.id}">ID를 입력하세요.</c:if>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        <br> <c:if test="${errors.password}">암호를 입력하세요.</c:if>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
