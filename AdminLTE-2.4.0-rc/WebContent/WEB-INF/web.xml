@@ -70,5 +70,11 @@
 		<url-pattern>/view/main/*</url-pattern>
 <!--		<url-pattern>/board.jsp</url-pattern>-->
 	</filter-mapping>
+	
+	<!-- 초기 화면 -->
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/view/login/loginForm.jsp</welcome-file>
+	</welcome-file-list>
+	
 
 </web-app>
