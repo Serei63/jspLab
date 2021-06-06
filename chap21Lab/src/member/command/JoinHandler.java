@@ -42,7 +42,7 @@ public class JoinHandler implements CommandHandler {
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
 		
-		joinReq.validate(errors);
+		joinReq.validate(errors);	// error = {"name":true, "confirmPw":true}
 		
 		if (!errors.isEmpty()) {
 			return FORM_VIEW;

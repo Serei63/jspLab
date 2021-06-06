@@ -76,6 +76,7 @@ public class DBCPInitListener implements ServletContextListener {
 
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
+		// 자원 반환하는 코드 삽입
 	}
 
 }
